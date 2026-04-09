@@ -102,6 +102,9 @@ CONFIG_KEYS = [
     "contribution_enabled",
     "contribution_server_url",
     "contribution_key",
+    "contribution_mode",
+    "custom_contribution_url",
+    "custom_contribution_token",
 ]
 
 
@@ -139,6 +142,10 @@ def get_config():
         all_cfg["contribution_enabled"] = "0"
     if not all_cfg.get("contribution_server_url"):
         all_cfg["contribution_server_url"] = "http://new.xem8k5.top:7317/"
+    if not all_cfg.get("contribution_mode"):
+        all_cfg["contribution_mode"] = "codex"
+    if not all_cfg.get("custom_contribution_url"):
+        all_cfg["custom_contribution_url"] = "http://127.0.0.1:5000"
     if not all_cfg.get("external_apps_update_mode"):
         all_cfg["external_apps_update_mode"] = "tag"
     if not str(all_cfg.get("email_domain_rule_enabled", "") or "").strip():
